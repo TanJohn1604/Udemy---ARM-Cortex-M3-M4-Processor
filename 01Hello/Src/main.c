@@ -7,9 +7,7 @@
   ******************************************************************************
 */
 
-#if !defined(__SOFT_FP__) && defined(__ARM_FP)
-  #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-#endif
+
 
 #include<stdio.h>
 #include<stdint.h>
@@ -51,7 +49,7 @@ int main(void)
 	int val2 = 0;
 	__asm volatile ("MRS %0,CONTROL":"=r"(val2));
 
-	int* val3 = 0X2000000;
+	int* val3 =(int* ) 0X2000000;
 	int val4 = 0;
 	__asm volatile ("LDR %0,[%1]":"=r"(val4):"r"(val3));
 

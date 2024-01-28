@@ -147,7 +147,7 @@ int main(void)
  8000224:	f3ef 8314 	mrs	r3, CONTROL
  8000228:	60bb      	str	r3, [r7, #8]
 
-	int* val3 = 0X2000000;
+	int* val3 =(int* ) 0X2000000;
  800022a:	f04f 7300 	mov.w	r3, #33554432	; 0x2000000
  800022e:	607b      	str	r3, [r7, #4]
 	int val4 = 0;
