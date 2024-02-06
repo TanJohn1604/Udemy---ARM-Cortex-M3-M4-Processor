@@ -1,46 +1,21 @@
-21:36:42 **** Incremental Build of configuration Debug for project stack exception entry and exit ****
+23:32:01 **** Incremental Build of configuration Debug for project Task_scheduler ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:50:24: warning: unused variable 'some_address' [-Wunused-variable]
-   50 |                 void (*some_address) (void);
-      |                        ^~~~~~~~~~~~
-arm-none-eabi-gcc -o "stack exception entry and exit.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project Udemy - ARM Cortex-M3 M4 Processor\F411\stack exception entry and exit\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stack exception entry and exit.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: stack exception entry and exit.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Task_scheduler.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project Udemy - ARM Cortex-M3 M4 Processor\F411\Task_scheduler\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Task_scheduler.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Task_scheduler.elf
  
-arm-none-eabi-size  stack\ exception\ entry\ and\ exit.elf 
-arm-none-eabi-objdump -h -S stack\ exception\ entry\ and\ exit.elf  > "stack exception entry and exit.list"
+arm-none-eabi-size  Task_scheduler.elf 
+arm-none-eabi-objdump -h -S Task_scheduler.elf  > "Task_scheduler.list"
    text	   data	    bss	    dec	    hex	filename
-   5780	    100	   1900	   7780	   1e64	stack exception entry and exit.elf
+   4824	    104	   1984	   6912	   1b00	Task_scheduler.elf
 Finished building: default.size.stdout
  
-Finished building: stack exception entry and exit.list
+Finished building: Task_scheduler.list
  
-21:36:45 **** Incremental Build of configuration Debug for project stack exception entry and exit ****
+23:32:39 **** Incremental Build of configuration Debug for project Task_scheduler ****
 make -j8 all 
-arm-none-eabi-size  stack\ exception\ entry\ and\ exit.elf 
+arm-none-eabi-size  Task_scheduler.elf 
    text	   data	    bss	    dec	    hex	filename
-   5780	    100	   1900	   7780	   1e64	stack exception entry and exit.elf
-Finished building: default.size.stdout
- 
-21:39:11 **** Incremental Build of configuration Debug for project stack exception entry and exit ****
-make -j8 all 
-arm-none-eabi-size  stack\ exception\ entry\ and\ exit.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5780	    100	   1900	   7780	   1e64	stack exception entry and exit.elf
-Finished building: default.size.stdout
- 
-21:40:15 **** Incremental Build of configuration Debug for project stack exception entry and exit ****
-make -j8 all 
-arm-none-eabi-size  stack\ exception\ entry\ and\ exit.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5780	    100	   1900	   7780	   1e64	stack exception entry and exit.elf
-Finished building: default.size.stdout
- 
-21:41:12 **** Incremental Build of configuration Debug for project stack exception entry and exit ****
-make -j8 all 
-arm-none-eabi-size  stack\ exception\ entry\ and\ exit.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5780	    100	   1900	   7780	   1e64	stack exception entry and exit.elf
+   4824	    104	   1984	   6912	   1b00	Task_scheduler.elf
 Finished building: default.size.stdout
  

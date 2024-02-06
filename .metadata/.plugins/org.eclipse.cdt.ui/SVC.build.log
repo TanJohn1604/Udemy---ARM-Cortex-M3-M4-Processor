@@ -1,0 +1,17 @@
+16:56:30 **** Incremental Build of configuration Debug for project SVC ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "SVC.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Project Udemy - ARM Cortex-M3 M4 Processor\F411\SVC\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SVC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SVC.elf
+ 
+arm-none-eabi-size  SVC.elf 
+arm-none-eabi-objdump -h -S SVC.elf  > "SVC.list"
+   text	   data	    bss	    dec	    hex	filename
+   5272	    100	   1900	   7272	   1c68	SVC.elf
+Finished building: default.size.stdout
+ 
+Finished building: SVC.list
+ 
+
+16:56:30 Build Finished. 0 errors, 0 warnings. (took 626ms)
+

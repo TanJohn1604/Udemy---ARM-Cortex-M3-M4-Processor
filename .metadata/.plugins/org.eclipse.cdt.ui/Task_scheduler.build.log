@@ -1,0 +1,10 @@
+23:32:39 **** Incremental Build of configuration Debug for project Task_scheduler ****
+make -j8 all 
+arm-none-eabi-size  Task_scheduler.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4824	    104	   1984	   6912	   1b00	Task_scheduler.elf
+Finished building: default.size.stdout
+ 
+
+23:32:39 Build Finished. 0 errors, 0 warnings. (took 219ms)
+
