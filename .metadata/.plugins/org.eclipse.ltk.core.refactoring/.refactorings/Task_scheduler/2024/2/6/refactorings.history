@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Task_scheduler/Src/led&apos; to &apos;led.c&apos;" description="Rename resource &apos;led&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/led" name="led.c" stamp="1707034667605" updateReferences="true"/>
-</session>
