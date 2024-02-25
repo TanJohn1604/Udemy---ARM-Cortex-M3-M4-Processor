@@ -1,11 +1,18 @@
 #include "stdint.h"
 
+int main();
+
 #define SRAM_SATRT 0X20000000
 #define SRAM_SIZE (128U*1024)
 #define SRAM_END ((SRAM_SATRT) + (SRAM_SIZE))
 #define STACK_START SRAM_END
 
 
+extern unsigned int  _edata;
+extern unsigned int  _sdata;
+extern unsigned int  _etext;
+extern unsigned int  _sbss;
+extern unsigned int  _ebss;
 
 void Default_Handler(void);
 
@@ -192,5 +199,28 @@ while(1);
 
 void Reset_Handler()
 {
-	
+unsigned int size = (unsigned int)&_edata - (unsigned int)&_sdata;
+unsigned char *pDst = (unsigned char *) &_sdata;//sram
+unsigned char *pSrc = (unsigned char *) &_etext;//flash
+//copy .data  section to sram
+for(int i=0;i<size;i++)
+{
+    *pDst = *pSrc;
+pDst++;
+pSrc++;
+}
+
+//init the .bss section to zero in sram
+size =(unsigned int)&_ebss- (unsigned int)&_sbss;
+pDst = (unsigned char *)&_sbss;
+for(int i=0;i<size;i++)
+{
+    *pDst = 0;
+    pDst++;
+
+}
+//call main
+
+main();
+
 }

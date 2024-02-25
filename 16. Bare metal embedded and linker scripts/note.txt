@@ -1,0 +1,27 @@
+arm-none-eabi-objdump.exe -h .\stm23f411_starup.o
+
+arm-none-eabi-gcc -nostdlib -T stm32f411.ld *.o -o final.elf
+del /S /Q *.o *.elf # lenh cua window
+
+
+//đổi thành file hex
+arm-none-eabi-objcopy -O ihex final.elf final.hex
+
+
+
+//mở một terminal linux chạy server
+make load
+
+//4 câu lệnh để nạp vào board
+//mở một terminal linux khác chạy client
+arm-none-eabi-gdb.exe 
+target remote localhost:3333
+monitor reset init
+monitor flash write_image erase final.elf
+
+monitor reset halt //reset và dừng
+monitor resume // chạy tiếp chương trình
+monitor halt // dừng
+monitor quit // dừng
+
+monitor mdw 0x20000000 4 // đọc giá trị tại địa chỉ
